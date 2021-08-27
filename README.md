@@ -1,4 +1,4 @@
-# hidding-url
+# hidden-url
 
 Code samples are written on **php**. But it can be applied algorithmically to other languages as well. 
 
