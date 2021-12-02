@@ -1,10 +1,7 @@
 <?php
+if($_SERVER['HTTP_REFERER'] !== 'http://hide-url/')
+    die();
 
-// print_r($_SERVER['HTTP_REFERER']); die();
-
-if($_SERVER['HTTP_REFERER'] !== 'http://hide-url/'){
-die();
-}
 
 $images = array(
     '05edd57091ad570303df856c652a7a174554a148' => 'sample.pdf',
