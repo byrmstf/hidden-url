@@ -18,5 +18,5 @@ When you want to access from browser like below
 
 **info** 
 --- 
-https://mustafabayram.dev 
+https://mustafabayram.com.tr 
 ---
