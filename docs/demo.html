@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden URL - Secure File Access System</title>
+    <title>Hidden URL - Live Demo</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
     <style>
         * {
@@ -63,6 +63,33 @@
             margin-bottom: 10px;
         }
         
+        .demo-container {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .demo-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+        
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -99,22 +126,18 @@
             text-decoration: underline;
         }
         
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 20px 10px;
-            transition: transform 0.3s ease;
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
         }
         
-        .cta-button:hover {
-            transform: translateY(-2px);
-            text-decoration: none;
-            color: white;
+        .code-example pre {
+            margin: 0;
         }
         
         @media (max-width: 768px) {
@@ -128,13 +151,43 @@
     <div class="container">
         <div class="header">
             <h1>🔒 Hidden URL</h1>
-            <p>Secure File Access System</p>
+            <p>Live Demo - Secure File Access System</p>
         </div>
         
         <div class="demo-section">
             <div class="info-box">
-                <h3>📋 About This Project</h3>
-                <p>Hidden URL is a secure file access system that protects your files using hash-based URLs. This prevents direct access to your files while maintaining easy integration into existing projects.</p>
+                <h3>📋 Demo Açıklaması</h3>
+                <p>Bu sayfa, Hidden URL sisteminin nasıl çalıştığını gösterir. GitHub Pages static dosyaları desteklediği için, canlı PHP demo'yu görmek için aşağıdaki butonları kullanın.</p>
+            </div>
+            
+            <div class="demo-container">
+                <h3>🚀 Canlı Demo'ya Erişim</h3>
+                <p>GitHub Pages PHP desteklemediği için, canlı demo'yu görmek için aşağıdaki seçenekleri kullanın:</p>
+                
+                <a href="https://github.com/byrmstf/hidden-url" class="demo-button" target="_blank">
+                    📁 GitHub'da İncele
+                </a>
+                
+                <a href="https://github.com/byrmstf/hidden-url/archive/main.zip" class="demo-button" target="_blank">
+                    📥 Projeyi İndir
+                </a>
+                
+                <a href="https://github.com/byrmstf/hidden-url#quick-start" class="demo-button" target="_blank">
+                    🚀 Hızlı Başlangıç
+                </a>
+            </div>
+            
+            <div class="code-example">
+                <h3>💻 Hızlı Kurulum</h3>
+                <pre><code># Projeyi klonlayın
+git clone https://github.com/byrmstf/hidden-url.git
+cd hidden-url
+
+# PHP sunucusunu başlatın
+php -S localhost:8000
+
+# Tarayıcıda açın
+# http://localhost:8000</code></pre>
             </div>
             
             <div class="features">
@@ -161,18 +214,6 @@
                     <h3>Multi-Format</h3>
                     <p>PDF, images, videos and other file types</p>
                 </div>
-            </div>
-            
-            <div style="text-align: center; margin: 40px 0;">
-                <a href="demo.html" class="cta-button">
-                    🚀 Live Demo
-                </a>
-                <a href="https://github.com/byrmstf/hidden-url" class="cta-button" target="_blank">
-                    ⭐ Star on GitHub
-                </a>
-                <a href="https://github.com/byrmstf/hidden-url/archive/main.zip" class="cta-button" target="_blank">
-                    📥 Download
-                </a>
             </div>
         </div>
         
