@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/byrmstf/hidden-url.svg)](https://github.com/byrmstf/hidden-url/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/byrmstf/hidden-url.svg)](https://github.com/byrmstf/hidden-url/network)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen.svg)](https://byrmstf.github.io/hidden-url/)
+[![Interactive Demo](https://img.shields.io/badge/Interactive%20Demo-Try%20Now-orange.svg)](https://byrmstf.github.io/hidden-url/demo.html)
 
 > **Hash-based URL system for secure file access** - Protect PDFs, images, videos and other files from direct access.
 
@@ -159,6 +161,31 @@ hidden-url/
 4. **Update the hash configuration in `img.php`**
 5. **Test the system by accessing `index.php`**
 
+## 🌐 Live Demo
+
+### Online Demo
+- **GitHub Pages Demo:** [https://byrmstf.github.io/hidden-url/](https://byrmstf.github.io/hidden-url/)
+- **Interactive Demo:** [https://byrmstf.github.io/hidden-url/demo.html](https://byrmstf.github.io/hidden-url/demo.html)
+
+### Local Demo
+```bash
+# Clone the project
+git clone https://github.com/byrmstf/hidden-url.git
+cd hidden-url
+
+# Start PHP server
+php -S localhost:8000
+
+# Open in browser
+# http://localhost:8000
+```
+
+### Demo Features
+- 🔒 **Secure File Access** - See how hash-based URLs work
+- 📁 **PDF Viewer** - Test with sample PDF file
+- 🌐 **Referer Control** - Understand domain restrictions
+- ⚡ **Performance** - Experience fast file delivery
+
 ## 🤝 Contributing
 
 1. Fork the project
@@ -193,6 +220,26 @@ If you find a bug or have a suggestion, please report it on the [Issues](https:/
 ![GitHub forks](https://img.shields.io/github/forks/byrmstf/hidden-url)
 ![GitHub issues](https://img.shields.io/github/issues/byrmstf/hidden-url)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/byrmstf/hidden-url)
+
+## 🎯 Try It Now
+
+### 🌐 Online Demos
+- **[GitHub Pages Demo](https://byrmstf.github.io/hidden-url/)** - Static documentation and overview
+- **[Interactive Demo](https://byrmstf.github.io/hidden-url/demo.html)** - Interactive demo with setup instructions
+
+### 💻 Local Testing
+```bash
+# Quick start
+git clone https://github.com/byrmstf/hidden-url.git
+cd hidden-url && php -S localhost:8000
+# Visit: http://localhost:8000
+```
+
+### 🔗 Quick Links
+- 📖 **Documentation:** [README.md](README.md)
+- 🚀 **Live Demo:** [GitHub Pages](https://byrmstf.github.io/hidden-url/)
+- 💻 **Interactive Demo:** [Try Now](https://byrmstf.github.io/hidden-url/demo.html)
+- 📥 **Download:** [Latest Release](https://github.com/byrmstf/hidden-url/archive/main.zip)
 
 ## 🔗 Related Projects
 
