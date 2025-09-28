@@ -5,56 +5,62 @@
 [![GitHub Stars](https://img.shields.io/github/stars/byrmstf/hidden-url.svg)](https://github.com/byrmstf/hidden-url/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/byrmstf/hidden-url.svg)](https://github.com/byrmstf/hidden-url/network)
 
-> **Güvenli dosya erişimi için hash tabanlı URL sistemi** - PDF, resim, video ve diğer dosyaları doğrudan erişimden koruyun.
+> **Hash-based URL system for secure file access** - Protect PDFs, images, videos and other files from direct access.
 
-## 🚀 Özellikler
+## 🚀 Features
 
-- **🔐 Güvenli Erişim**: Dosyalarınızı hash tabanlı URL'ler ile koruyun
-- **🌐 Referer Kontrolü**: Sadece belirli domain'lerden erişime izin verin
-- **📁 Çoklu Format Desteği**: PDF, resim, video ve diğer dosya türleri
-- **⚡ Hızlı ve Hafif**: Minimal PHP kodu ile maksimum performans
-- **🛡️ Güvenlik**: Doğrudan dosya erişimini engelleyin
-- **🔧 Kolay Entegrasyon**: Mevcut projelerinize kolayca entegre edin
+- **🔐 Secure Access**: Protect your files with hash-based URLs
+- **🌐 Referer Control**: Allow access only from specific domains
+- **📁 Multi-Format Support**: PDF, images, videos and other file types
+- **⚡ Fast & Lightweight**: Maximum performance with minimal PHP code
+- **🛡️ Security**: Prevent direct file access
+- **🔧 Easy Integration**: Easily integrate into existing projects
 
-## 📋 Gereksinimler
+## 📋 Requirements
 
-- PHP 7.4 veya üzeri
-- Web sunucusu (Apache, Nginx, vs.)
-- Dosya okuma izinleri
+- PHP 7.4 or higher
+- Web server (Apache, Nginx, etc.)
+- File read permissions
 
-## 🛠️ Kurulum
+## 🛠️ Installation
 
-1. **Projeyi klonlayın:**
+1. **Clone the project:**
 ```bash
 git clone https://github.com/byrmstf/hidden-url.git
 cd hidden-url
 ```
 
-2. **Dosyaları web sunucunuzun root dizinine kopyalayın**
+2. **Copy files to your web server's root directory**
 
-3. **Dosyalarınızı `documents/` klasörüne yerleştirin**
+3. **Place your files in the `documents/` folder**
 
-4. **Hash değerlerini `img.php` dosyasında güncelleyin:**
+4. **Update hash values in `img.php` file:**
 ```php
-$images = array(
-    'your-file-hash' => 'your-file.pdf',
-    'another-hash' => 'another-file.jpg',
+$file_config = array(
+    'your-file-hash' => array(
+        'file' => 'your-file.pdf',
+        'type' => 'application/pdf',
+        'size' => 123456
+    ),
 );
 ```
 
-## 📖 Kullanım
+## 📖 Usage
 
-### Temel Kullanım
+### Basic Usage
 
 ```php
-// img.php dosyasında dosya hash'lerini tanımlayın
-$images = array(
-    '05edd57091ad570303df856c652a7a174554a148' => 'sample.pdf',
-    'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0' => 'document.pdf',
+// Define file hashes in img.php file
+$file_config = array(
+    '05edd57091ad570303df856c652a7a174554a148' => array(
+        'file' => 'sample.pdf',
+        'type' => 'application/pdf',
+        'size' => 433994
+    ),
 );
 ```
 
-### HTML'de Kullanım
+### HTML Usage
 
 ```html
 <object data="/img.php?h=05edd57091ad570303df856c652a7a174554a148" 
@@ -64,89 +70,141 @@ $images = array(
 </object>
 ```
 
-### Güvenlik Ayarları
+### Security Settings
 
 ```php
-// Referer kontrolü (isteğe bağlı)
-if (!isset($_SERVER['HTTP_REFERER']) || 
-    strpos($_SERVER['HTTP_REFERER'], 'yourdomain.com') === false) {
-    die('Unauthorized access');
+// Referer control (optional)
+$allowed_domains = ['yourdomain.com', 'www.yourdomain.com'];
+$referer = $_SERVER['HTTP_REFERER'] ?? '';
+$is_allowed = false;
+
+foreach ($allowed_domains as $domain) {
+    if (strpos($referer, $domain) !== false) {
+        $is_allowed = true;
+        break;
+    }
+}
+
+if (!$is_allowed) {
+    http_response_code(403);
+    die('Access denied');
 }
 ```
 
-## 🔧 Gelişmiş Özellikler
+## 🔧 Advanced Features
 
-### Hash Oluşturma
+### Hash Generation
 
 ```php
-// Dosya için güvenli hash oluşturma
+// Generate secure hash for file
 $filename = 'document.pdf';
 $hash = hash('sha1', $filename . time() . 'your-secret-salt');
 ```
 
-### Çoklu Dosya Desteği
+### Multiple File Support
 
 ```php
-// Farklı dosya türleri için
-$images = array(
-    'pdf-hash' => 'document.pdf',
-    'img-hash' => 'image.jpg',
-    'vid-hash' => 'video.mp4',
+// Different file types
+$file_config = array(
+    'pdf-hash' => array(
+        'file' => 'document.pdf',
+        'type' => 'application/pdf',
+        'size' => 123456
+    ),
+    'img-hash' => array(
+        'file' => 'image.jpg',
+        'type' => 'image/jpeg',
+        'size' => 78901
+    ),
+    'vid-hash' => array(
+        'file' => 'video.mp4',
+        'type' => 'video/mp4',
+        'size' => 2345678
+    ),
 );
 ```
 
-## 🛡️ Güvenlik
+## 🛡️ Security
 
-- **Referer Kontrolü**: Sadece belirli domain'lerden erişim
-- **Hash Tabanlı Erişim**: Dosya isimlerini gizleme
-- **Doğrudan Erişim Engelleme**: Klasör erişimini kısıtlama
-- **SSL Desteği**: HTTPS bağlantıları için optimize edilmiş
+- **Referer Control**: Access only from specific domains
+- **Hash-Based Access**: Hide file names
+- **Direct Access Prevention**: Restrict folder access
+- **SSL Support**: Optimized for HTTPS connections
+- **File Validation**: Size and existence checks
+- **Security Headers**: XSS and clickjacking protection
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 
 ```
 hidden-url/
-├── index.php          # Ana sayfa
-├── img.php            # Dosya servis scripti
-├── documents/         # Dosyaların saklandığı klasör
-│   └── sample.pdf     # Örnek PDF dosyası
-├── README.md          # Bu dosya
-└── .gitignore         # Git ignore dosyası
+├── index.php              # Main page
+├── img.php                # File service script
+├── documents/             # Files storage folder
+│   └── sample.pdf         # Sample PDF file
+├── .github/
+│   └── workflows/
+│       └── ci.yml         # CI/CD pipeline
+├── README.md              # This file
+├── CONTRIBUTING.md        # Contribution guide
+├── LICENSE                # MIT License
+├── composer.json          # Dependencies
+└── .gitignore            # Git ignore file
 ```
 
-## 🤝 Katkıda Bulunma
+## 🚀 Quick Start
 
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
+1. **Download and extract the files**
+2. **Upload to your web server**
+3. **Add your files to the `documents/` folder**
+4. **Update the hash configuration in `img.php`**
+5. **Test the system by accessing `index.php`**
 
-## 📝 Lisans
+## 🤝 Contributing
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 👨‍💻 Geliştirici
+For more details, see [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Developer
 
 **Mustafa Bayram**
 - Website: [mustafabayram.com.tr](https://mustafabayram.com.tr)
 - GitHub: [@byrmstf](https://github.com/byrmstf)
 
-## ⭐ Yıldız Verin
+## ⭐ Star This Project
 
-Bu projeyi beğendiyseniz, lütfen yıldız verin! ⭐
+If you like this project, please give it a star! ⭐
 
-## 🐛 Hata Bildirimi
+## 🐛 Bug Reports
 
-Hata bulduysanız veya öneriniz varsa, lütfen [Issues](https://github.com/byrmstf/hidden-url/issues) sayfasından bildirin.
+If you find a bug or have a suggestion, please report it on the [Issues](https://github.com/byrmstf/hidden-url/issues) page.
 
-## 📊 İstatistikler
+## 📊 Statistics
 
 ![GitHub stars](https://img.shields.io/github/stars/byrmstf/hidden-url)
 ![GitHub forks](https://img.shields.io/github/forks/byrmstf/hidden-url)
 ![GitHub issues](https://img.shields.io/github/issues/byrmstf/hidden-url)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/byrmstf/hidden-url)
 
+## 🔗 Related Projects
+
+- [Secure File Manager](https://github.com/byrmstf/secure-file-manager)
+- [PHP Security Library](https://github.com/byrmstf/php-security)
+
+## 📚 Documentation
+
+- [API Documentation](docs/api.md)
+- [Security Guide](docs/security.md)
+- [Deployment Guide](docs/deployment.md)
+
 ---
 
-**⭐ Bu projeyi beğendiyseniz, yıldız vermeyi unutmayın!**
+**⭐ If you like this project, don't forget to give it a star!**

@@ -1,161 +1,161 @@
-# 🤝 Katkıda Bulunma Rehberi
+# 🤝 Contributing Guide
 
-Hidden URL projesine katkıda bulunmak istediğiniz için teşekkürler! Bu rehber, projeye nasıl katkıda bulunabileceğinizi açıklar.
+Thank you for your interest in contributing to the Hidden URL project! This guide explains how you can contribute to the project.
 
-## 📋 İçindekiler
+## 📋 Table of Contents
 
-- [Kod Katkısı](#kod-katkısı)
-- [Hata Bildirimi](#hata-bildirimi)
-- [Özellik İsteği](#özellik-isteği)
-- [Dokümantasyon](#dokümantasyon)
-- [Geliştirme Ortamı](#geliştirme-ortamı)
+- [Code Contribution](#code-contribution)
+- [Bug Reports](#bug-reports)
+- [Feature Requests](#feature-requests)
+- [Documentation](#documentation)
+- [Development Environment](#development-environment)
 
-## 🚀 Kod Katkısı
+## 🚀 Code Contribution
 
-### 1. Fork Yapın
-- GitHub'da projeyi fork edin
-- Yerel makinenizde klonlayın:
+### 1. Fork the Project
+- Fork the project on GitHub
+- Clone to your local machine:
 ```bash
 git clone https://github.com/YOUR_USERNAME/hidden-url.git
 cd hidden-url
 ```
 
-### 2. Branch Oluşturun
+### 2. Create a Branch
 ```bash
 git checkout -b feature/amazing-feature
-# veya
+# or
 git checkout -b fix/bug-description
 ```
 
-### 3. Değişikliklerinizi Yapın
-- Kod yazarken mevcut stil rehberini takip edin
-- Yorumları Türkçe veya İngilizce yazın
-- Güvenlik açıklarını dikkate alın
+### 3. Make Your Changes
+- Follow the existing code style guide
+- Write comments in English
+- Consider security vulnerabilities
 
-### 4. Test Edin
+### 4. Test Your Changes
 ```bash
-# PHP sunucusunu başlatın
+# Start PHP server
 php -S localhost:8000
 
-# Test edin
+# Test the application
 curl http://localhost:8000
 ```
 
-### 5. Commit ve Push
+### 5. Commit and Push
 ```bash
 git add .
 git commit -m "Add: amazing feature description"
 git push origin feature/amazing-feature
 ```
 
-### 6. Pull Request Oluşturun
-- GitHub'da Pull Request oluşturun
-- Değişikliklerinizi detaylı açıklayın
-- İlgili issue'ları referans edin
+### 6. Create a Pull Request
+- Create a Pull Request on GitHub
+- Describe your changes in detail
+- Reference related issues
 
-## 🐛 Hata Bildirimi
+## 🐛 Bug Reports
 
-### Hata Bildirirken:
-1. **Açıklayıcı başlık** kullanın
-2. **Adım adım** hatayı nasıl tekrarlayabileceğinizi açıklayın
-3. **Beklenen davranış** vs **gerçek davranış** belirtin
-4. **Sistem bilgileri** ekleyin (PHP versiyonu, OS, vs.)
-5. **Ekran görüntüsü** varsa ekleyin
+### When Reporting Bugs:
+1. Use a **descriptive title**
+2. **Step by step** explain how to reproduce the bug
+3. Specify **expected behavior** vs **actual behavior**
+4. Add **system information** (PHP version, OS, etc.)
+5. Add **screenshots** if available
 
-### Hata Bildirimi Şablonu:
+### Bug Report Template:
 ```markdown
-**Hata Açıklaması**
-Kısa ve net açıklama
+**Bug Description**
+Short and clear description
 
-**Tekrarlama Adımları**
-1. '...' adımına gidin
-2. '...' tıklayın
-3. '...' hatası görünür
+**Steps to Reproduce**
+1. Go to '...'
+2. Click on '...'
+3. See error '...'
 
-**Beklenen Davranış**
-Ne olması gerektiği
+**Expected Behavior**
+What should happen
 
-**Gerçek Davranış**
-Ne olduğu
+**Actual Behavior**
+What actually happens
 
-**Sistem Bilgileri**
+**System Information**
 - OS: [e.g. Windows 10]
 - PHP: [e.g. 8.3.25]
-- Tarayıcı: [e.g. Chrome 120]
+- Browser: [e.g. Chrome 120]
 
-**Ek Bilgiler**
-Varsa ek bilgiler
+**Additional Information**
+Any additional information
 ```
 
-## 💡 Özellik İsteği
+## 💡 Feature Requests
 
-### Özellik İsterken:
-1. **Açık başlık** kullanın
-2. **Problem** açıklayın
-3. **Çözüm önerisi** sunun
-4. **Alternatifler** düşünün
-5. **Ek bağlam** ekleyin
+### When Requesting Features:
+1. Use a **clear title**
+2. Describe the **problem**
+3. Suggest a **solution**
+4. Consider **alternatives**
+5. Add **additional context**
 
-## 📚 Dokümantasyon
+## 📚 Documentation
 
-Dokümantasyon katkıları da çok değerlidir:
-- README.md güncellemeleri
-- Kod yorumları
-- Kullanım örnekleri
-- Video rehberler
+Documentation contributions are also very valuable:
+- README.md updates
+- Code comments
+- Usage examples
+- Video tutorials
 
-## 🛠️ Geliştirme Ortamı
+## 🛠️ Development Environment
 
-### Gereksinimler:
+### Requirements:
 - PHP 7.4+
-- Web sunucusu (Apache/Nginx)
+- Web server (Apache/Nginx)
 - Git
 
-### Kurulum:
+### Setup:
 ```bash
-# Projeyi klonlayın
+# Clone the project
 git clone https://github.com/byrmstf/hidden-url.git
 cd hidden-url
 
-# Test sunucusunu başlatın
+# Start test server
 php -S localhost:8000
 ```
 
-### Kod Stili:
-- PSR-12 standartlarını takip edin
-- Anlamlı değişken isimleri kullanın
-- Yorumları açıklayıcı yazın
-- Güvenlik önlemlerini unutmayın
+### Code Style:
+- Follow PSR-12 standards
+- Use meaningful variable names
+- Write descriptive comments
+- Don't forget security measures
 
-## 🏷️ Commit Mesajları
+## 🏷️ Commit Messages
 
-Commit mesajlarınızı şu formatta yazın:
+Write your commit messages in this format:
 ```
-type: kısa açıklama
+type: short description
 
-Detaylı açıklama (isteğe bağlı)
+Detailed description (optional)
 ```
 
-**Türler:**
-- `Add:` Yeni özellik
-- `Fix:` Hata düzeltmesi
-- `Update:` Mevcut özellik güncellemesi
-- `Remove:` Özellik kaldırma
-- `Docs:` Dokümantasyon
-- `Style:` Kod formatı
-- `Refactor:` Kod yeniden düzenleme
-- `Test:` Test ekleme
+**Types:**
+- `Add:` New feature
+- `Fix:` Bug fix
+- `Update:` Update existing feature
+- `Remove:` Remove feature
+- `Docs:` Documentation
+- `Style:` Code formatting
+- `Refactor:` Code refactoring
+- `Test:` Add tests
 
-## 📞 İletişim
+## 📞 Communication
 
-- **GitHub Issues:** Hata bildirimi ve özellik istekleri için
+- **GitHub Issues:** For bug reports and feature requests
 - **Email:** [mustafabayram.com.tr](https://mustafabayram.com.tr)
 - **Website:** [mustafabayram.com.tr](https://mustafabayram.com.tr)
 
-## 🙏 Teşekkürler
+## 🙏 Thank You
 
-Katkıda bulunan herkese teşekkürler! Projeyi daha iyi hale getirmek için birlikte çalışalım.
+Thank you to everyone who contributes! Let's work together to make the project better.
 
 ---
 
-**Not:** Bu proje MIT lisansı altındadır. Katkıda bulunarak, kodunuzun bu lisans altında yayınlanmasını kabul etmiş olursunuz.
+**Note:** This project is licensed under the MIT License. By contributing, you agree that your code will be published under this license.

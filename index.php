@@ -148,16 +148,16 @@ $demo_url = "/img.php?h=" . $hash;
     <div class="container">
         <div class="header">
             <h1>🔒 Hidden URL</h1>
-            <p>Güvenli Dosya Erişim Sistemi Demo</p>
+            <p>Secure File Access System Demo</p>
         </div>
         
         <div class="demo-section">
             <div class="info-box">
-                <h3>📋 Demo Açıklaması</h3>
-                <p>Bu sayfa, Hidden URL sisteminin nasıl çalıştığını gösterir. Aşağıdaki PDF dosyası, doğrudan erişim yerine hash tabanlı URL ile sunulmaktadır.</p>
+                <h3>📋 Demo Description</h3>
+                <p>This page demonstrates how the Hidden URL system works. The PDF file below is served through a hash-based URL instead of direct access.</p>
                 
                 <div class="url-display">
-                    <strong>Gizli URL:</strong><br>
+                    <strong>Hidden URL:</strong><br>
                     <?= htmlspecialchars($demo_url) ?>
                 </div>
             </div>
@@ -169,8 +169,8 @@ $demo_url = "/img.php?h=" . $hash;
                     <embed width="100%" 
                            height="600px" 
                            src="<?= htmlspecialchars($demo_url) ?>"/>
-                    <p>PDF görüntüleyiciniz yoksa, 
-                       <a href="<?= htmlspecialchars($demo_url) ?>" target="_blank">dosyayı indirmek için tıklayın</a>.
+                    <p>If you don't have a PDF viewer, 
+                       <a href="<?= htmlspecialchars($demo_url) ?>" target="_blank">click here to download the file</a>.
                     </p>
                 </object>
             </div>
@@ -178,26 +178,26 @@ $demo_url = "/img.php?h=" . $hash;
             <div class="features">
                 <div class="feature">
                     <div class="feature-icon">🔐</div>
-                    <h3>Güvenli Erişim</h3>
-                    <p>Dosyalarınız hash tabanlı URL'ler ile korunur</p>
+                    <h3>Secure Access</h3>
+                    <p>Your files are protected with hash-based URLs</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">🌐</div>
-                    <h3>Referer Kontrolü</h3>
-                    <p>Sadece belirli domain'lerden erişime izin verin</p>
+                    <h3>Referer Control</h3>
+                    <p>Allow access only from specific domains</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">⚡</div>
-                    <h3>Hızlı Performans</h3>
-                    <p>Minimal kod ile maksimum performans</p>
+                    <h3>Fast Performance</h3>
+                    <p>Maximum performance with minimal code</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">📁</div>
-                    <h3>Çoklu Format</h3>
-                    <p>PDF, resim, video ve diğer dosya türleri</p>
+                    <h3>Multi-Format</h3>
+                    <p>PDF, images, videos and other file types</p>
                 </div>
             </div>
         </div>
@@ -208,7 +208,7 @@ $demo_url = "/img.php?h=" . $hash;
                 <a href="https://github.com/byrmstf/hidden-url" target="_blank">GitHub</a> | 
                 <a href="https://mustafabayram.com.tr" target="_blank">Mustafa Bayram</a>
             </p>
-            <p>⭐ Bu projeyi beğendiyseniz, GitHub'da yıldız verin!</p>
+            <p>⭐ If you like this project, please give it a star on GitHub!</p>
         </div>
     </div>
 </body>
