@@ -1,20 +1,9 @@
-<?php
-/**
- * Hidden URL - Demo Page
- * 
- * @author Mustafa Bayram
- * @version 2.0
- */
-
-$hash = "05edd57091ad570303df856c652a7a174554a148";
-$demo_url = "/img.php?h=" . $hash;
-?>
 <!DOCTYPE html>
-<html lang="tr" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden URL - Secure File Access Demo</title>
+    <title>Hidden URL - Secure File Access System</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
     <style>
         * {
@@ -61,20 +50,6 @@ $demo_url = "/img.php?h=" . $hash;
             padding: 30px;
         }
         
-        .pdf-container {
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .pdf-viewer {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-        
         .info-box {
             background: #f8f9fa;
             border-left: 4px solid #007bff;
@@ -86,16 +61,6 @@ $demo_url = "/img.php?h=" . $hash;
         .info-box h3 {
             color: #007bff;
             margin-bottom: 10px;
-        }
-        
-        .url-display {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            word-break: break-all;
-            margin: 10px 0;
         }
         
         .features {
@@ -134,13 +99,27 @@ $demo_url = "/img.php?h=" . $hash;
             text-decoration: underline;
         }
         
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+        
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2em;
-            }
-            
-            .pdf-viewer {
-                height: 400px;
             }
         }
     </style>
@@ -149,31 +128,13 @@ $demo_url = "/img.php?h=" . $hash;
     <div class="container">
         <div class="header">
             <h1>🔒 Hidden URL</h1>
-            <p>Secure File Access System Demo</p>
+            <p>Secure File Access System</p>
         </div>
         
         <div class="demo-section">
             <div class="info-box">
-                <h3>📋 Demo Description</h3>
-                <p>This page demonstrates how the Hidden URL system works. The PDF file below is served through a hash-based URL instead of direct access.</p>
-                
-                <div class="url-display">
-                    <strong>Hidden URL:</strong><br>
-                    <?= htmlspecialchars($demo_url) ?>
-                </div>
-            </div>
-            
-            <div class="pdf-container">
-                <object data="<?= htmlspecialchars($demo_url) ?>" 
-                        type="application/pdf" 
-                        class="pdf-viewer">
-                    <embed width="100%" 
-                           height="600px" 
-                           src="<?= htmlspecialchars($demo_url) ?>"/>
-                    <p>If you don't have a PDF viewer, 
-                       <a href="<?= htmlspecialchars($demo_url) ?>" target="_blank">click here to download the file</a>.
-                    </p>
-                </object>
+                <h3>📋 About This Project</h3>
+                <p>Hidden URL is a secure file access system that protects your files using hash-based URLs. This prevents direct access to your files while maintaining easy integration into existing projects.</p>
             </div>
             
             <div class="features">
@@ -200,6 +161,15 @@ $demo_url = "/img.php?h=" . $hash;
                     <h3>Multi-Format</h3>
                     <p>PDF, images, videos and other file types</p>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="https://github.com/byrmstf/hidden-url" class="cta-button" target="_blank">
+                    ⭐ Star on GitHub
+                </a>
+                <a href="https://github.com/byrmstf/hidden-url/archive/main.zip" class="cta-button" target="_blank">
+                    📥 Download
+                </a>
             </div>
         </div>
         
